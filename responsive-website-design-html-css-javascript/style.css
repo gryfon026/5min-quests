@@ -47,3 +47,12 @@ header ul li a.nav__listItem--active {
 .nav__toggle {
   display: none;
 }
+section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  /* max-width: 100%; */
+  padding: 150px 100px 100px 100px;
+}
