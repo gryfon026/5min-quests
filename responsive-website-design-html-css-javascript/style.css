@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   font-family: "Ubuntu Mono", monospace;
 }
 header {
@@ -52,16 +53,22 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #fff;
   min-height: 100vh;
   padding: 150px 100px 100px;
 }
 section .content {
   position: relative;
+  width: 100%; /* check how flex work with images */
+}
+section#home .content {
   width: 50%;
 }
 section .imgBx {
+  /* check how configure images with display:flex  */
   position: relative;
-  width: 50%;
+  display: block;
+  width: 300px;
   height: 400px;
   margin-left: 30px;
   background: #000;
@@ -80,4 +87,24 @@ section .content h2 {
 }
 section .content p {
   font-size: 18px;
+}
+section .content a.content__btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 10px;
+  background: #111;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+section:nth-child(odd) {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  color: #fff;
+}
+section:nth-child(odd) .content a.content__btn {
+  background: #fff;
+  color: #111;
 }
