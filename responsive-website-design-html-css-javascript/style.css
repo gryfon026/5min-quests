@@ -108,3 +108,23 @@ section:nth-child(odd) .content a.content__btn {
   background: #fff;
   color: #111;
 }
+@media (max-width: 992px) {
+  header#nav ul {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 50px 100px;
+
+    text-align: center;
+    transition: 0.5s;
+    flex-direction: column;
+    overflow: auto;
+    background: #111;
+  }
+  header#nav ul li a {
+    font-size: 24px;
+    margin: 5px 0;
+  }
+}
