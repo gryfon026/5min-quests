@@ -51,7 +51,7 @@ header ul li a.nav__listItem--active {
 section {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: #fff;
   min-height: 100vh;
@@ -60,6 +60,11 @@ section {
 section .content {
   position: relative;
   width: 100%; /* check how flex work with images */
+}
+
+section#home,
+section#about {
+  justify-content: space-between;
 }
 section#home .content {
   width: 50%;
@@ -109,22 +114,85 @@ section:nth-child(odd) .content a.content__btn {
   color: #111;
 }
 @media (max-width: 992px) {
-  header#nav ul {
+  section {
+    padding: 100px 50px 50px;
+    flex-direction: column;
+  }
+  section#home,
+  section#about {
+    justify-content: space-around;
+    align-items: center;
+  }
+  section#home .content,
+  section#home .imgBx,
+  section#about .imgBx {
+    width: 100%;
+    margin: 0;
+  }
+
+  header ul {
     position: absolute;
+    /* display: none; */
     top: 80px;
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
     padding: 50px 100px;
+    opacity: 0;
 
     text-align: center;
     transition: 0.5s;
-    flex-direction: column;
     overflow: auto;
     background: #111;
+    flex-direction: column;
+    transform: translateY(-100%);
   }
-  header#nav ul li a {
+  header ul li a {
     font-size: 24px;
     margin: 5px 0;
+  }
+
+  .nav__toggle {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .nav__toggle:before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 10px 0 #fff;
+    transition: 0.5s;
+  }
+  .nav__toggle:after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    z-index: 1;
+    transition: 0.5s;
+  }
+  header.active .nav__toggle:before {
+    top: 14px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 #ffffff00;
+    transition: 0.5s;
+  }
+  header.active .nav__toggle:after {
+    bottom: 14px;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+  }
+  header.active ul {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

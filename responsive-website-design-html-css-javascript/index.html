@@ -6,26 +6,48 @@
     <title>Another Responsive Website Design</title>
     <link rel="stylesheet" href="style.css" />
     <!-- https://www.youtube.com/watch?v=om1lDyDiL4k -->
-    <!-- Technique:
-        1. CSS - BEM
-        2. HTML
-        3. FLEXBOX 
+    <!-- 
+        TODO:
+        * Jump menu with active class and smooth scroll
+        * clean up BEM class names
+        * css mobile first
     -->
   </head>
   <body>
-    <header id="nav">
+    <header id="header">
       <a href="#" class="logo">LOGO</a>
-      <ul>
+      <ul id="nav">
         <li>
-          <a href="#home" class="nav__listItem nav__listItem--active">Home</a>
+          <a
+            href="#home"
+            class="nav__listItem nav__listItem--active"
+            onclick="toggle()"
+            >Home</a
+          >
         </li>
-        <li><a href="#about" class="nav__listItem">About</a></li>
-        <li><a href="#service" class="nav__listItem">Service</a></li>
-        <li><a href="#portfolio" class="nav__listItem">Portfolio</a></li>
-        <li><a href="#team" class="nav__listItem">Team</a></li>
-        <li><a href="#contact" class="nav__listItem">Contact</a></li>
+        <li>
+          <a href="#about" class="nav__listItem" onclick="toggle()">About</a>
+        </li>
+        <li>
+          <a href="#service" class="nav__listItem" onclick="toggle()"
+            >Service</a
+          >
+        </li>
+        <li>
+          <a href="#portfolio" class="nav__listItem" onclick="toggle()"
+            >Portfolio</a
+          >
+        </li>
+        <li>
+          <a href="#team" class="nav__listItem" onclick="toggle()">Team</a>
+        </li>
+        <li>
+          <a href="#contact" class="nav__listItem" onclick="toggle()"
+            >Contact</a
+          >
+        </li>
       </ul>
-      <div class="nav__toggle"></div>
+      <div class="nav__toggle" onclick="toggle()"></div>
     </header>
     <section id="home">
       <!-- FIXME: configure content and image width  -->
@@ -118,5 +140,11 @@
         <a class="content__btn" href="#">Read More</a>
       </div>
     </section>
+    <script type="text/javascript">
+      function toggle() {
+        var header = document.getElementById("header");
+        header.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
