@@ -47,7 +47,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: red;
   width: 100%;
   z-index: 1000;
 }
@@ -63,7 +62,6 @@
   position: relative;
   width: 36px;
   height: 28px;
-  background-color: yellow;
   background-image: url(assets/toggle.png);
   background-size: cover;
   cursor: pointer;
@@ -167,4 +165,136 @@
 }
 .client .image-box img:hover {
   opacity: 1;
+}
+
+.testimonials {
+  position: relative;
+  padding: 100px;
+  background: #12222f;
+  text-align: center;
+}
+.testimonials .container {
+  margin: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* */
+  flex-wrap: wrap;
+}
+.testimonials .container .content-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 30px 50px;
+  /* margin-bottom: 30px; */
+  width: 450px;
+
+  background: #fff;
+  text-align: left;
+}
+.testimonials .container .content-box .quote-text {
+  font-style: italic;
+  color: #12222f;
+  margin-bottom: 30px;
+}
+.testimonials .container .content-box .author-quote {
+  width: 100%;
+  margin-top: 30px;
+  text-align: end;
+  font-weight: 500;
+  color: #3f8ffc;
+}
+.contact {
+  padding: 100px;
+  background: #162c5b;
+  text-align: center;
+}
+.contact-form {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+.contact-form .content-box {
+  background: #162c5b;
+  padding: 100px;
+  width: 50%;
+}
+.title {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.contact-form .image-box {
+  background: url(assets/bg2.jpg);
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.contact-form .content-box.redbg {
+  background: url(assets/red.jpg);
+  background-size: cover;
+  background-position: cover;
+}
+.form .input-box {
+  margin-bottom: 40px;
+}
+.form .input-box input,
+.form .input-box textarea {
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  resize: none;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+.form .input-box input::placeholder,
+.form .input-box textarea::placeholder {
+  color: #fff;
+}
+.form .input-box input[type="submit"] {
+  width: 150px;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  font-weight: 500;
+}
+.footer {
+  position: relative;
+  background: #162c3b;
+  display: flex;
+  padding: 20px 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer ul li {
+  list-style: none;
+}
+.footer ul li a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+}
+.footer ul li a img {
+  filter: invert(1);
+  max-width: 20px;
 }
