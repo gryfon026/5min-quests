@@ -15,12 +15,16 @@ body {
   top: 20px;
   left: 20px;
   bottom: 20px;
-  width: 300px;
+  width: 70px;
   /* box-sizing: initial; */
   border-radius: 10px;
   border-left: 5px solid #4d5bf9;
   background: #4d5bf9;
   transition: width 0.5s;
+  overflow: hidden;
+}
+.navigation.active {
+  width: 300px;
 }
 .navigation ul {
   position: absolute;
@@ -40,6 +44,50 @@ body {
 .navigation ul li.active {
   background: #fff;
 }
+.navigation ul li.active b:nth-child(1) {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+}
+.navigation ul li.active+li b:nth-child(1) {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+}
+.navigation ul li.active+li b:nth-child(2) {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  background: #333;
+  border-top-right-radius: 20px ;
+}
+.navigation ul li.active b:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: #333;
+  border-bottom-right-radius: 20px;
+}
+/* .navigation ul li.active b:nth-child(2){
+  position:absolute;
+  top:-20px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  background: brown;
+  border-bottom-right-radius: 20px;
+} */
 .navigation ul li a {
   position: relative;
   display: block;
@@ -69,4 +117,34 @@ body {
   height: 60px;
   line-height: 60px;
   white-space: normal;
+}
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #4d5bf9;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toggle.active {
+  background: #ff4d89;
+}
+.toggle ion-icon {
+  position: absolute;
+  color: #fff;
+  font-size: 34px;
+  display: none;
+}
+.toggle ion-icon.open,
+.toggle.toggle.active ion-icon.close {
+  display: block;
+}
+.toggle ion-icon.close,
+.toggle.active ion-icon.open {
+  display: none;
 }

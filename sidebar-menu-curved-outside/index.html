@@ -11,12 +11,16 @@
     <div class="navigation">
       <ul>
         <li class="list active">
+          <b></b>
+          <b></b>
           <a href="#">
             <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
             <span class="title">Home</span>
           </a>
         </li>
         <li class="list">
+          <b></b>
+          <b></b>
           <a href="#">
             <span class="icon"
               ><ion-icon name="person-outline"></ion-icon
@@ -25,6 +29,8 @@
           </a>
         </li>
         <li class="list">
+          <b></b>
+          <b></b>
           <a href="#">
             <span class="icon"
               ><ion-icon name="chatbubble-outline"></ion-icon
@@ -33,6 +39,8 @@
           </a>
         </li>
         <li class="list">
+          <b></b>
+          <b></b>
           <a href="#">
             <span class="icon"
               ><ion-icon name="settings-outline"></ion-icon
@@ -41,12 +49,16 @@
           </a>
         </li>
         <li class="list">
+          <b></b>
+          <b></b>
           <a href="#">
             <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
             <span class="title">Help</span>
           </a>
         </li>
         <li class="list">
+          <b></b>
+          <b></b>
           <a href="#">
             <span class="icon">
               <ion-icon name="lock-closed-outline"></ion-icon
@@ -55,16 +67,30 @@
           </a>
         </li>
         <li class="list">
+          <b></b>
+          <b></b>
           <a href="#">
             <span class="icon"
               ><ion-icon name="log-out-outline"></ion-icon
             ></span>
             <span class="title">Sign Out</span>
           </a>
+          
         </li>
       </ul>
     </div>
+    <div class="toggle">
+      <ion-icon class="open" name="menu-outline"></ion-icon>
+      <ion-icon class="close" name="close-outline"></ion-icon>
+    </div>
     <script>
+      let menuToggle = document.querySelector(".toggle");
+      let navToggle = document.querySelector(".navigation");
+      menuToggle.onclick = function () {
+        menuToggle.classList.toggle("active");
+        navToggle.classList.toggle("active");
+      };
+
       // add active class in selected list item
       let list = document.querySelectorAll(".list");
       for (let i = 0; i < list.length; i++) {
